@@ -1,6 +1,6 @@
 # MARU Platform — Claude Code 플러그인 (테섭)
 
-MARU 플랫폼 **테스트 서버**의 MCP 도구를 Claude Code 에 붙이는 플러그인 마켓플레이스다. MARU 계정으로 로그인하면 런처·업데이터 빌드를 올리고 **test 트랙에만** 릴리스할 수 있다.
+MARU 플랫폼 **테스트 서버**의 MCP 도구를 Claude Code 에 붙이는 플러그인 마켓플레이스다. MARU 계정으로 로그인하면 런처·업데이터 빌드와 내 조직 콘텐츠 빌드를 올리고 **test 트랙에만** 릴리스할 수 있다.
 비공개 저장소라 `code-reach` 조직 접근권이 있어야 설치된다. 실섭용은 별도 저장소(`code-reach/platform.claude-plugin`)다.
 
 ## 설치
@@ -25,11 +25,17 @@ Claude Code v2.1.231 이상.
 | 구성 | 내용 |
 |---|---|
 | `.mcp.json` | MCP 서버 `maru-test` → `https://test-mcp.maru-platform.com/mcp` |
-| `skills/release-program` | 빌드 → 해시 → 업로드 → 등록 → test 릴리스 → 확인 절차 |
+| `skills/release-program` | 런처·업데이터: 빌드 → 해시 → 업로드 → 등록 → test 릴리스 → 확인 절차 |
+| `skills/release-content` | 콘텐츠: 버전 생성 → 해시 → 업로드 스크립트 → 확정 → test 릴리스 → 상태 확인 절차 |
 
-도구(플랫폼 관리자 계정에만 보인다): `list_programs` · `list_program_versions` · `prepare_program_upload` · `register_program_version` · `release_program_test` · `verify_program_test_release` · `list_updater_versions` · `prepare_updater_upload` · `register_updater_version` · `release_updater_test`
+도구는 계정 권한에 따라 보이는 것이 다르다.
 
-prod 승격과 실섭 업데이터 핀은 도구가 없다 — admin-web 에서 사람이 한다.
+| 대상 | 도구 | 보이는 계정 |
+|---|---|---|
+| 런처·업데이터 | `list_programs` · `list_program_versions` · `prepare_program_upload` · `register_program_version` · `release_program_test` · `verify_program_test_release` · `list_updater_versions` · `prepare_updater_upload` · `register_updater_version` · `release_updater_test` | 플랫폼 관리자 |
+| 콘텐츠 | `list_my_contents` · `list_content_versions` · `get_content_release_status` · `create_content_version` · `prepare_content_upload` · `complete_content_upload` · `abort_content_upload` · `release_content_test` | 벤더 조직 owner·admin, 플랫폼 관리자 |
+
+prod 승격과 실섭 업데이터 핀은 도구가 없다 — 런처·업데이터는 admin-web, 콘텐츠는 콘솔에서 사람이 한다. 콘텐츠 노출 전환·아카이브·삭제도 같다.
 
 ## 이 저장소를 고칠 때
 
