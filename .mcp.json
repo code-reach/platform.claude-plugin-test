@@ -1,0 +1,8 @@
+{
+    "mcpServers": {
+        "maru-test": {
+            "type": "http",
+            "url": "https://test-mcp.maru-platform.com/mcp"
+        }
+    }
+}
