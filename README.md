@@ -9,13 +9,13 @@ Claude Code v2.1.231 이상.
 
 ```
 /plugin marketplace add code-reach/platform.claude-plugin-test
-/plugin install maru-test@maru-test
+/plugin install maru-platform-test@maru-platform-test
 ```
 
-설치하면 MCP 서버 `maru-test` 가 자동으로 뜬다. 처음 한 번 로그인한다.
+설치하면 MCP 서버 `maru-platform-test` 가 자동으로 뜬다. 처음 한 번 로그인한다.
 
 ```
-/mcp  →  maru-test  →  Authenticate
+/mcp  →  maru-platform-test  →  Authenticate
 ```
 
 브라우저에서 MARU 계정으로 로그인하고 동의하면 끝이다. 로그인은 한 번 하면 오래 유지된다(쓰는 동안 계속 연장, 최대 1년). 비대화형(`claude -p`)은 로그인 흐름을 돌릴 수 없으니 대화형 세션에서 먼저 로그인한다.
@@ -24,7 +24,7 @@ Claude Code v2.1.231 이상.
 
 | 구성 | 내용 |
 |---|---|
-| `.mcp.json` | MCP 서버 `maru-test` → `https://test-mcp.maru-platform.com/mcp` |
+| `.mcp.json` | MCP 서버 `maru-platform-test` → `https://test-mcp.maru-platform.com/mcp` |
 | `skills/release-program` | 런처·업데이터: 빌드 → 해시 → 업로드 → 등록 → test 릴리스 → 확인 절차 |
 | `skills/release-content` | 콘텐츠: 버전 생성 → 해시 → 업로드 스크립트 → 확정 → test 릴리스 → 상태 확인 절차 |
 
