@@ -28,6 +28,7 @@ Claude Code v2.1.231 이상.
 | `launcher-relay.ps1` | 이 PC 에서 실행 중인 런처의 MCP 파이프를 찾아 stdio 와 잇는다(Windows 기본 PowerShell 로 실행, 설치할 것 없음) |
 | `skills/release-program` | 런처·업데이터: 빌드 → 해시 → 업로드 → 등록 → test 릴리스 → 확인 절차 |
 | `skills/release-content` | 콘텐츠: 버전 생성 → 해시 → 업로드 스크립트 → 확정 → test 릴리스 → 상태 확인 절차 |
+| `skills/launcher-qa` | 이 PC 의 실행 중 런처를 `launcher` MCP 도구로 확인·시험하는 요령 — 조작 순서, 저장 동작 금지, `eval_js` 로 클릭·입력·측정, 증상별 원인(옛 exe·HMR 깨짐·포커스) |
 
 도구는 계정 권한에 따라 보이는 것이 다르다.
 
