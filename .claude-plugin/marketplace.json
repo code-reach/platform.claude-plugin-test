@@ -4,7 +4,7 @@
         "name": "CodeReach"
     },
     "metadata": {
-        "description": "MARU Platform plugins for the TEST environment (internal)."
+        "description": "MARU Platform plugins for the TEST environment."
     },
     "plugins": [
         {
